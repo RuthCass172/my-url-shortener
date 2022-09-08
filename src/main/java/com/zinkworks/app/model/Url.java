@@ -1,17 +1,21 @@
 package com.zinkworks.app.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 
+@Entity
 public class Url {
     private String longUrl;
+    @Id
     private String shortUrl;
-    private Date CreatedAt;
+    private Date createdAt;
     private Integer numOfClicks;
 
     public Url(String longUrl, String shortUrl, Date createdAt, Integer numOfClicks) {
         this.longUrl = longUrl;
         this.shortUrl = shortUrl;
-        CreatedAt = createdAt;
+        this.createdAt = createdAt;
         this.numOfClicks = numOfClicks;
     }
 
@@ -32,11 +36,11 @@ public class Url {
     }
 
     public Date getCreatedAt() {
-        return CreatedAt;
+        return createdAt;
     }
 
     public void setCreatedAt(Date createdAt) {
-        CreatedAt = createdAt;
+        this.createdAt = createdAt;
     }
 
     public Integer getNumOfClicks() {
