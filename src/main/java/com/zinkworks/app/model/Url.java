@@ -1,53 +1,45 @@
 package com.zinkworks.app.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.Date;
 
 @Entity
 public class Url {
-    private String longUrl;
+    @Column
+    private String LONGURL;
     @Id
-    private String shortUrl;
-    private Date createdAt;
-    private Integer numOfClicks;
+    private String SHORTURL;
+    @Column
+    private Integer NUMOFCLICKS;
 
-    public Url(String longUrl, String shortUrl, Date createdAt, Integer numOfClicks) {
-        this.longUrl = longUrl;
-        this.shortUrl = shortUrl;
-        this.createdAt = createdAt;
-        this.numOfClicks = numOfClicks;
+    public Url(String longUrl, String shortUrl, Integer numOfClicks) {
+        this.LONGURL = longUrl;
+        this.SHORTURL = shortUrl;
+        this.NUMOFCLICKS = numOfClicks;
     }
 
     public String getLongUrl() {
-        return longUrl;
+        return LONGURL;
     }
 
     public void setLongUrl(String longUrl) {
-        this.longUrl = longUrl;
+        this.LONGURL = longUrl;
     }
 
     public String getShortUrl() {
-        return shortUrl;
+        return SHORTURL;
     }
 
     public void setShortUrl(String shortUrl) {
-        this.shortUrl = shortUrl;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
+        this.SHORTURL = shortUrl;
     }
 
     public Integer getNumOfClicks() {
-        return numOfClicks;
+        return NUMOFCLICKS;
     }
 
     public void setNumOfClicks(Integer numOfClicks) {
-        this.numOfClicks = numOfClicks;
+        this.NUMOFCLICKS = numOfClicks;
     }
 }
