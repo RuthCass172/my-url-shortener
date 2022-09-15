@@ -6,40 +6,41 @@ import javax.persistence.Id;
 
 @Entity
 public class Url {
-    @Column
-    private String LONGURL;
+    @Column(name = "LONGURL")
+    private String longUrl;
     @Id
-    private String SHORTURL;
-    @Column
-    private Integer NUMOFCLICKS;
+    @Column(name = "SHORTURL")
+    private String shortUrl;
+    @Column(name = "NUMOFCLICKS")
+    private Integer numOfClicks;
 
     public Url(String longUrl, String shortUrl, Integer numOfClicks) {
-        this.LONGURL = longUrl;
-        this.SHORTURL = shortUrl;
-        this.NUMOFCLICKS = numOfClicks;
+        this.longUrl = longUrl;
+        this.shortUrl = shortUrl;
+        this.numOfClicks = numOfClicks;
     }
 
     public String getLongUrl() {
-        return LONGURL;
+        return longUrl;
     }
 
     public void setLongUrl(String longUrl) {
-        this.LONGURL = longUrl;
+        this.longUrl = longUrl;
     }
 
     public String getShortUrl() {
-        return SHORTURL;
+        return shortUrl;
     }
 
     public void setShortUrl(String shortUrl) {
-        this.SHORTURL = shortUrl;
+        this.shortUrl = shortUrl;
     }
 
     public Integer getNumOfClicks() {
-        return NUMOFCLICKS;
+        return numOfClicks;
     }
 
     public void setNumOfClicks(Integer numOfClicks) {
-        this.NUMOFCLICKS = numOfClicks;
+        this.numOfClicks = numOfClicks;
     }
 }
