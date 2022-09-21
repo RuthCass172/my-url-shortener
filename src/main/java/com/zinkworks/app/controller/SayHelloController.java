@@ -1,17 +1,21 @@
 package com.zinkworks.app.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.zinkworks.app.service.UrlService;
 
 @RestController
 public class SayHelloController {
     private UrlService urlService;
+
     @GetMapping("/")
-    public String greeting() {
-        return "Hello World!";
+    public String homePage() {
+        return "Welcome to my Url Shortener";
+    }
+
+    @GetMapping("/{shortUrl}")
+    public String redirectToLongUrl(@PathVariable String shortUrl) {
+        shortUrl = "www.zinkworks.com";
+        return shortUrl;
     }
 
     @PostMapping("short-url")
