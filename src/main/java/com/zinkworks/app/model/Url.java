@@ -14,6 +14,8 @@ public class Url {
     @Column(name = "NUMOFCLICKS")
     private Integer numOfClicks;
 
+    public Url() {}
+
     public Url(String longUrl, String shortUrl, Integer numOfClicks) {
         this.longUrl = longUrl;
         this.shortUrl = shortUrl;

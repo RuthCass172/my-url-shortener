@@ -12,10 +12,9 @@ public class SayHelloController {
         return "Welcome to my Url Shortener";
     }
 
-    @GetMapping("/{shortUrl}")
+    @GetMapping("redirect/{shortUrl}")
     public String redirectToLongUrl(@PathVariable String shortUrl) {
-        shortUrl = "www.zinkworks.com";
-        return shortUrl;
+        return urlService.redirectShortUrl(shortUrl);
     }
 
     @PostMapping("short-url")
