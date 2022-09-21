@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import com.zinkworks.app.service.UrlService;
 
 @RestController
-public class SayHelloController {
+public class UrlController {
     private UrlService urlService;
 
     @GetMapping("/")
