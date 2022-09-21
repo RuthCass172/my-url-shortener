@@ -24,7 +24,7 @@ public class UrlService {
         Optional<Url> url = urlRepository.findById(shortUrl);
         if (url.isPresent()) {
             String longUrl = url.get().getLongUrl();
-            return longUrl;//.matches("^(https?)://.*$") ? longUrl : String.format("https://%s", longUrl);
+            return longUrl;
         }
         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Url was not found");
     }
